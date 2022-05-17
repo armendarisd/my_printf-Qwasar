@@ -2,18 +2,24 @@
 ***
 
 ## Task
-TODO - What is the problem? And where is the challenge?
+The challege is to code a printf function, without using the built-in function printf
 
 ## Description
-TODO - How have you solved the problem?
+The key of the solution is the use of the syscall function write. With this syscall function you can use a string and print it on the console
+
 
 ## Installation
-TODO - How to install your project? npm install? make? make re?
+gcc -o my_printf my_printf.c
+and then,
+./my_printf "This is a %d" 1
+
+Note: it works only with one integer
 
 ## Usage
-TODO - How does it work?
+As param_1 you should write the string with the specifier
+As param_2 you should write the integer you want to print
 ```
-./my_project argument1 argument2
+./my_printf param_1 param_2
 ```
 
 ### The Core Team
