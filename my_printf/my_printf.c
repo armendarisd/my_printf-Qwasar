@@ -9,7 +9,7 @@
 
 int main() {
     
-    
+    my_putstr("My age is %d%d", 5, 6);
     
     return 0;
 }

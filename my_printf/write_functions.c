@@ -21,6 +21,8 @@ void my_putstr(char* param_1, ...){
         if(param_1[index] == '%'){
             switch(param_1[index+1]){
                 case 'd':
+                my_putd(va_arg(args, int));
+                
                 break;
 
                 case 'o':
