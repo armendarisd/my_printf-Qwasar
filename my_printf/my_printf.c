@@ -8,8 +8,11 @@
 
 
 int main() {
-    
-    my_putstr("My age is %d%d", 5, 6);
+   
+
+    int a;
+    int *ptr_a = &a;
+    my_printf("Hello world %d %d", 5, 6);
     
     return 0;
 }
