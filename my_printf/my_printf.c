@@ -10,9 +10,9 @@
 int main() {
    
 
-    int a;
-    int *ptr_a = &a;
-    my_printf("Hello world %d %d", 5, 6);
+   
+
+ my_printf("Hello %s %s!\n", "Mr", "Gaetan");
     
     return 0;
 }
