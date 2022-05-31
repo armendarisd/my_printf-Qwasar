@@ -9,9 +9,11 @@ The key of the solution is the use of the syscall function write. With this sysc
 
 
 ## Installation
-gcc -o my_printf my_printf.c
-and then,
-./my_printf "This is a %d" 1
+gcc -c write_functions.c               
+gcc -c id_functions.c
+gcc -c my_printf.c            
+gcc -o ejecutable write_functions.o id_functions.o my_printf.o
+./ejecutable
 
 Note: it works only with one integer
 
