@@ -5,14 +5,15 @@
 #include "string.h"
 #include "write_functions.h"
 #include "id_functions.h"
+#include <stddef.h>
 
 
 int main() {
    
 
    
+my_printf("%d - %d - %d!\n", 2048, 0, -1337);
 
- my_printf("Hello %s %s!\n", "Mr", "Gaetan");
     
     return 0;
 }

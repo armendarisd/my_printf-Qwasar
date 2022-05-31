@@ -7,6 +7,8 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include <string.h>
+#include <stddef.h>
+
 
 /*  This function prints one character on the terminal*/
 void my_printf(char* param_1, ...){
@@ -66,10 +68,13 @@ int my_putchar(char c) {
 
 int my_putstr(char* param_1){
     int index = 0;
-    while(param_1[index] != '\0'){
+    
+        while(param_1[index] != '\0'){
         my_putchar(param_1[index]);
         index++;
-    }
+        }
+    
+  
     return strlen(param_1);
 }
 
@@ -86,26 +91,59 @@ int my_putd(int param_1){
     int index1 = 0;
     int index2 = 0;
     
-    /*This part of the function stores the integer values in the array*/
-    while(my_div != 0){
-       my_mod = my_div%10;
-       my_ascii_inverse[index1] = my_mod + '0';
-       my_div = my_div/10;
-       index1++;
-    }
-    my_ascii_inverse[index1] = '\0';
-    index1 = 0;
+    /*This part take the decision of positive, negative or 0 number*/
+    if(param_1 > 0){
+        /*This part of the function stores the integer values in the array*/
+        while(my_div != 0){
+            my_mod = my_div%10;
+            my_ascii_inverse[index1] = my_mod + '0';
+            my_div = my_div/10;
+            index1++;
+        }
+        my_ascii_inverse[index1] = '\0';
+        index1 = 0;
 
-    index2 = strlen(my_ascii_inverse);
-    while(index2 != 0){
-        my_ascii_right[index1] = my_ascii_inverse[index2-1];
-        index1++;
-        index2--;
-    }
-    my_ascii_right[index1] = '\0';
+        index2 = strlen(my_ascii_inverse);
+        while(index2 != 0){
+            my_ascii_right[index1] = my_ascii_inverse[index2-1];
+            index1++;
+            index2--;
+        }
+        my_ascii_right[index1] = '\0';
 
-    my_putstr(my_ascii_right);
-    return strlen(my_ascii_right);
+        my_putstr(my_ascii_right);
+        return strlen(my_ascii_right);
+
+    }else if(param_1 < 0){
+        /*This part of the function stores the integer values in the array*/
+        my_div = my_div*-1;
+        while(my_div != 0){
+            my_mod = my_div%10;
+            my_ascii_inverse[index1] = my_mod + '0';
+            my_div = my_div/10;
+            index1++;
+        }
+        my_ascii_inverse[index1] = '\0';
+        index1 = 0;
+
+        index2 = strlen(my_ascii_inverse);
+        while(index2 != 0){
+            my_ascii_right[index1] = my_ascii_inverse[index2-1];
+            index1++;
+            index2--;
+        }
+        my_ascii_right[index1] = '\0';
+
+        my_putchar('-');
+        my_putstr(my_ascii_right);
+        return strlen(my_ascii_right+1);
+
+    }else if(param_1 == 0){
+        my_putchar('0');
+        return 1;
+    }
+    return 0;
+  
 }
 
 /*This function converts a octal to its ascii value*/
