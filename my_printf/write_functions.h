@@ -4,7 +4,7 @@ int my_putchar(char c);
 
 int my_putstr(char* param_1);
 
-void my_printf(char* param_1, ...);
+int my_printf(char* param_1, ...);
 
 int my_putd(int param_1);
 

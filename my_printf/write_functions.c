@@ -11,7 +11,7 @@
 
 
 /*  This function prints one character on the terminal*/
-void my_printf(char* param_1, ...){
+int my_printf(char* param_1, ...){
     int index = 0;
     int indexSize = 0;
     int string_size = 0;
@@ -56,10 +56,8 @@ void my_printf(char* param_1, ...){
             index++;
         }
     } 
-    if(param_1[index] == '\0'){
-        my_putstr("The size is: ");
-        my_putd(strlen(param_1)-(count_parameters(param_1)*2)+string_size);
-    }
+    return strlen(param_1)-(count_parameters(param_1)*2)+string_size;
+    
 }
 
 int my_putchar(char c) {

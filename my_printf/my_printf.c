@@ -12,8 +12,8 @@ int main() {
    
 
    
-my_printf("%d - %d - %d!\n", 2048, 0, -1337);
-
+my_printf("%c%c%c%c%c!\n", 'H', 'e', 'l', 'l', 'o');
+my_putd(my_printf("%c%c%c%c%c!\n", 'H', 'e', 'l', 'l', 'o'));
     
     return 0;
 }
